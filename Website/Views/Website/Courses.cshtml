@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Course>
+@{
+    ViewData["Title"] = "Courses";
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+}
+
+<!--w3l-banner-slider-main-->
+<section class="w3l-banner-slider-main w3l-inner-page-main">
+	<div class="breadcrumb-infhny">
+		<header class="top-headerhny">
+			<!--/nav-->
+			<nav class="navbar navbar-expand-lg navbar-light fill">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="@Url.Action("Index","Website")">
+						<label class="lohny"><span class="fa fa-graduation-cap" aria-hidden="true"></span>Edu</label>Line
+					</a>
+					<!-- if logo is image enable this
+					  <a class="navbar-brand" href="#index.html">
+						<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+					  </a> -->
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mx-lg-auto ml-auto">
+							<li class="nav-item active">
+								@Html.ActionLink("Home","Index","Website",null,new{@class="nav-link"})
+							</li>
+
+							<li class="nav-item">
+								@Html.ActionLink("About","About","Website",null,new{@class="nav-link"})
+							</li>
+
+							<li class="nav-item">
+								@Html.ActionLink("Courses","Courses","Website",null,new{@class="nav-link"})
+							</li>
+
+						</ul>
+
+					</div>
+				</div>
+			</nav>
+			<!--//nav-->
+		</header>
+		<!-- /breadcrumbs-->
+		<div class="container">
+			<nav aria-label="breadcrumb" class="breadcrumb-info">
+				<h2 class="hny-title text-center">Courses</h2>
+				<ol class="breadcrumb mb-0">
+					<li class="breadcrumb-item">@Html.ActionLink("Home","Index","Website",null,new{@class="nav-link"})</li>
+					<li class="breadcrumb-item active" aria-current="page">Courses</li>
+				</ol>
+			</nav>
+		</div>
+		<!-- //breadcrumbs-->
+	</div>
+	<!--//banner-slider-->
+</section>
+
+
+<section class="features-6">
+	<div class="features6-block py-5">
+		<div class="container py-lg-5">
+			<div class="row title-content">
+				<div class="col-lg-4 title-left">
+					<h3 class="hny-title">What We Provide</h3>
+				</div>
+				<div class="col-lg-8 title-info">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eligendi minima
+						accusantium
+						reiciendis, cupiditate optio corrupti quis quam at!.Duis aute irure dolor in reprehenderit
+						in voluptate velit esse cillum.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 offset-md-2">
+					<table class="table">
+						<thead>
+							<tr class="text-center">
+								<th>@Html.DisplayNameFor(model => model.Name)</th>
+								<th>@Html.DisplayNameFor(model => model.courseDescription)</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+						
+						
+					@foreach (var item in Model)
+							{
+								<tr>
+									<td class="align-middle">
+										@Html.DisplayFor(modelItem => item.Name)
+									</td>
+									<td class="align-middle">
+										@Html.DisplayFor(modelItem => item.courseDescription)
+									</td>
+								</tr>
+							} 
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- features-4 -->
+
+
+
